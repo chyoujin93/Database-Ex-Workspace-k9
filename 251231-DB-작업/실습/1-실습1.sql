@@ -1,0 +1,18 @@
+-- 실습1
+-- 1)
+-- 급여가 3000 이상인 직원만 조회하시오.
+-- 셀렉션 : 급여가 3000 이상
+-- 프로젝션 : 언급 없음 -> 모든 컬럼 
+SELECT * from emp where sal >= 3000; 
+
+-- 2) 
+-- EMP 테이블에서 이름(ENAME), 급여(SAL), 부서번호(DEPTNO)만 조회하시오.  
+-- 셀렉션 : 조건 없음
+-- 프로젝션 : 이름(ENAME), 급여(SAL), 부서번호(DEPTNO)
+SELECT ENAME, SAL, DEPTNO from emp;
+
+-- 3) 
+-- 20번 부서의 사원 이름과 급여를 조회하시오.
+-- 셀렉션 : 20번 부서
+-- 프로젝션 : 사원 이름(ENAME), 급여(SAL) + 추가 부서번호 궁금해요.
+SELECT ENAME, SAL from emp where DEPTNO = 20; 

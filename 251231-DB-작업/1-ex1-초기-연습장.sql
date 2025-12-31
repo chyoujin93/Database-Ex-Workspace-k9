@@ -19,3 +19,24 @@ select sysdate from dual;
 -- 찾을 때 보고 싶은 열은 모든 컬럼. 
 SELECT * FROM EMP
 WHERE JOB = 'MANAGER';
+
+
+-- ### 🔹 ② 프로젝션 (Projection) – 열 중심 조회  
+-- 특정 **열(Column)**만 선택하여 조회
+
+-- ```sql
+-- 보고 싶은 열, ENAME 사원 이름, SAL 급여 
+SELECT ENAME, SAL FROM EMP;
+
+-- 보고 싶은 열 ? 모든 열
+SELECT * FROM EMP;
+
+
+
+-- ### 🔹 ③ 셀렉션 + 프로젝션 함께 사용  
+
+-- ```sql
+-- 보고 싶은 열 : ENAME 사원이름, SAL 급여 
+-- 조건 : SAL > 2000 ,  사원만 조회. 
+SELECT ENAME, SAL FROM EMP
+WHERE SAL > 2000;
