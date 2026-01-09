@@ -173,3 +173,11 @@ where deptno = 60;
 
 insert into DEPT_TEM (deptno, dname, loc)
                values(80,     null,  '');
+
+
+select 
+    empno
+    , ename
+    , mgr
+    , mgr as chg_mgr
+from emp;

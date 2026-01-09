@@ -1,38 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+SELECT  count(*) 
+    from emp e;
+-- 15/5 = 3
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <h1>f12 를 눌러 확인은 콘솔 탭에서 해주세요. </h1>
-    <p>JS 자바스크립트를, html 파일안에서 사용시 script 태그를 이용함</p>
-    <script>
-        // 1. 변수 , 상수 선언 
-        let myName = "이상용";
-        
-        let yourName;
-        alert(yourName);
-        
-        yourName = "신승엽";
-        alert(yourName);
+select * 
+from (
+    SELECT 
+        ROWNUM as rn
+        , t1.* 
+    from(
+        SELECT 
+            e.* 
+        from emp e
+        ORDER by sal
+    ) t1
+) t2    
+where rn BETWEEN 11 and 15
+-- WHERE A.RN BETWEEN ((2*5)+1) AND ((2*5) + 5)
+-- where ROWNUM > 1
+;
 
-        const pi = 3.14;
-        // 2. 값 확인, 콘솔에서 확인. console.log()이용해서 출력.
-        console.log(myName);
-        console.log(pi);
-        // 3. 변수 값 변경, let 이름을 사용시, 같은 이름 사용 못함. 
-        let myName2 = "이상용2";
-        // 4. 상수 값 변경 시도(안된), const 이름을 사용시, 
-        // 같은 이름 사용 못함.
-        const pi2 = 3.142;
-        // 5. alert() 함수 이용해서 출력. 
-        alert(myName);
-        alert(pi);
-    </script>
-</body>
+-- SELECT 
+--     e.* 
+-- from emp e
+-- ORDER by sal
+-- FETCH NEXT 5 ROWS only
+-- OFFSET 5 ROWS FETCH NEXT 5 ROWS only
+-- OFFSET ["페이지"*"페이지당 개수"] ROWS FETCH NEXT ["페이지당 갯수"] ROWS only;
+;
 
-</html>
+-- a = select max(empno) from emp;
+-- a += 1
+
+
+insert into emp(empno,hiredate) values((select max(empno) +1 from emp), sysdate)
+;
+
+select * from emp;
+

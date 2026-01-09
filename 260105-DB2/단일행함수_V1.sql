@@ -97,3 +97,5 @@ from emp
 where mod(empno,2) = 0;
 
 https://drive.google.com/drive/folders/1LMFcwIQjRB0sj5RTEtfX9pgW-6_Efj8I?usp=drive_link
+
+https://www.mongodb.com/ko-kr/docs/v7.0/tutorial/query-array-of-documents/
